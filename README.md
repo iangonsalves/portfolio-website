@@ -35,7 +35,7 @@ A responsive personal portfolio website showcasing my skills, projects, and prof
 
 ## Live Demo
 
-Visit the live portfolio at: [https://iangonsalves.github.io/portfolio/](https://iangonsalves.github.io/portfolio/)
+Visit the live portfolio at: [https://iangonsalves.github.io/portfolio/](https://iangonsalves.github.io/portfolio-website)
 
 ## Contact
 
