@@ -2,7 +2,7 @@
 
 A responsive personal portfolio website showcasing my skills, projects, and professional experience as a Backend/Full Stack Developer.
 
-![Portfolio Preview](images/preview_picture.png)
+![Portfolio Preview](portfolio/public/images/preview_picture.png)
 
 ## Features
 
