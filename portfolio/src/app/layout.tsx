@@ -22,10 +22,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const prefix = process.env.NODE_ENV === 'production' ? '/portfolio-website' : '';
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon-v2.ico" />
+        
+        <link rel="icon" href={`${prefix}/favicon.ico`} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
