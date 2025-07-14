@@ -6,7 +6,7 @@ import { SiTypescript, SiCplusplus, SiC, SiLaravel, SiDjango, SiExpress, SiMongo
 
 export default function Home() {
   const [modalImage, setModalImage] = useState<string | null>(null);
-  const prefix = process.env.NODE_ENV === 'production' ? '/portfolio-website' : '';
+  const prefix = '/portfolio-website';
   return (
     <main className="flex flex-col gap-24 max-w-4xl mx-auto w-full px-4 py-12">
       {/* Hero Section */}
