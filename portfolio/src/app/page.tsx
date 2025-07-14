@@ -6,7 +6,7 @@ import { SiTypescript, SiCplusplus, SiC, SiLaravel, SiDjango, SiExpress, SiMongo
 
 export default function Home() {
   const [modalImage, setModalImage] = useState<string | null>(null);
-  const prefix = '/portfolio-website';
+  const prefix = process.env.NODE_ENV === 'production' ? '/portfolio-website' : '';
   return (
     <main className="flex flex-col gap-24 max-w-4xl mx-auto w-full px-4 py-12">
       {/* Hero Section */}
@@ -82,7 +82,7 @@ export default function Home() {
             {/* Image on the left */}
             <div className="flex-shrink-0 w-full sm:w-[350px] h-[220px] flex items-center justify-center mb-4 sm:mb-0 relative group">
               <Image
-                src="/images/jersey_platform.png"
+                src={prefix + "/images/jersey_platform.png"}
                 alt="Screenshot of Online Football Jersey Shop"
                 width={350}
                 height={220}
@@ -151,7 +151,7 @@ export default function Home() {
             {/* Image on the left */}
             <div className="flex-shrink-0 w-full sm:w-[350px] h-[220px] flex items-center justify-center mb-4 sm:mb-0 relative group">
               <Image
-                src="/images/restaurant.png"
+                src={prefix + "/images/restaurant.png"}
                 alt="Screenshot of Restaurant Booking System"
                 width={350}
                 height={220}
@@ -209,7 +209,7 @@ export default function Home() {
             {/* Image on the left */}
             <div className="flex-shrink-0 w-full sm:w-[350px] h-[220px] flex items-center justify-center mb-4 sm:mb-0 relative group">
               <Image
-                src="/images/calculator.png"
+                src={prefix + "/images/calculator.png"}
                 alt="Screenshot of Calculator Application"
                 width={350}
                 height={220}
@@ -265,7 +265,7 @@ export default function Home() {
             {/* Image on the left */}
             <div className="flex-shrink-0 w-full sm:w-[350px] h-[220px] flex items-center justify-center mb-4 sm:mb-0 relative group">
               <Image
-                src="/images/etch-a-sketch.png"
+                src={prefix + "/images/etch-a-sketch.png"}
                 alt="Screenshot of Project 4"
                 width={350}
                 height={220}
@@ -322,7 +322,7 @@ export default function Home() {
             {/* Image on the left */}
             <div className="flex-shrink-0 w-full sm:w-[350px] h-[220px] flex items-center justify-center mb-4 sm:mb-0 relative group">
               <Image
-                src="/images/rpg.png"
+                src={prefix + "/images/rpg.png"}
                 alt="Screenshot of Project 5"
                 width={350}
                 height={220}
