@@ -6,6 +6,7 @@ import { SiTypescript, SiCplusplus, SiC, SiLaravel, SiDjango, SiExpress, SiMongo
 
 export default function Home() {
   const [modalImage, setModalImage] = useState<string | null>(null);
+  const prefix = process.env.NODE_ENV === 'production' ? '/portfolio-website' : '';
   return (
     <main className="flex flex-col gap-24 max-w-4xl mx-auto w-full px-4 py-12">
       {/* Hero Section */}
@@ -381,7 +382,7 @@ export default function Home() {
             onClick={() => setModalImage(null)}
           >
             <img
-              src={modalImage}
+              src={prefix + modalImage}
               alt="Project Fullscreen"
               className="max-w-full max-h-full rounded shadow-lg"
               onClick={e => e.stopPropagation()}
