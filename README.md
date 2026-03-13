@@ -28,10 +28,6 @@ A responsive personal portfolio website showcasing my skills, projects, and prof
 
 - **Football Jersey Online Shopping Platform** (PHP + React)
 - **Restaurant Booking System** (Django)
-- **Calculator** (JavaScript)
-- **Etch-a-Sketch** (JavaScript)
-- **Rock Paper Scissors Game** (JavaScript)
-
 
 ## Live Demo
 
