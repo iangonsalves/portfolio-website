@@ -4,6 +4,8 @@ import ActionButton from "@/components/portfolio/ActionButton";
 import Reveal from "@/components/portfolio/Reveal";
 
 export default function HeroSection() {
+  const prefix = process.env.NODE_ENV === "production" ? "/portfolio-website" : "";
+
   return (
     <Reveal>
       <section className="hero-panel rounded-[2rem] px-6 py-8 sm:px-8 sm:py-10">
@@ -37,7 +39,7 @@ export default function HeroSection() {
           <div className="flex flex-col items-center gap-3">
             <div className="hero-avatar-frame">
               <Image
-                src="/images/profile.png"
+                src={`${prefix}/images/profile.png`}
                 alt="Portrait of Ian Gonsalves"
                 width={220}
                 height={220}
