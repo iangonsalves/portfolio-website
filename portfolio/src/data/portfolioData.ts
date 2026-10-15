@@ -3,24 +3,26 @@ import {
   FaDocker,
   FaExternalLinkAlt,
   FaGithub,
+  FaMicrochip,
   FaGitAlt,
-  FaHtml5,
-  FaJs,
   FaNodeJs,
   FaPhp,
   FaPython,
   FaReact,
+  FaCode,
 } from "react-icons/fa";
 import {
   SiDjango,
+  SiHtml5,
+  SiJavascript,
   SiLaravel,
   SiMysql,
   SiNextdotjs,
   SiPostgresql,
-  SiPrisma,
   SiRedis,
   SiStripe,
   SiTypescript,
+  SiGithubactions,
 } from "react-icons/si";
 import type { Project, TechnologyGroup } from "@/components/portfolio/types";
 
@@ -29,11 +31,12 @@ export const technologyGroups: TechnologyGroup[] = [
     title: "Backend",
     items: [
       { label: "Python", icon: FaPython, className: "bg-yellow-100 text-yellow-700" },
-      { label: "Django", icon: SiDjango, className: "bg-green-100 text-green-800" },
-      { label: "PHP", icon: FaPhp, className: "bg-indigo-100 text-indigo-700" },
-      { label: "Laravel", icon: SiLaravel, className: "bg-red-100 text-red-700" },
+      { label: "FastAPI", icon: FaPython, className: "bg-teal-100 text-teal-800" },
       { label: "Node.js", icon: FaNodeJs, className: "bg-green-100 text-green-700" },
-      { label: "REST APIs", icon: FaDatabase, className: "bg-slate-100 text-slate-700" },
+      { label: "PHP", icon: FaPhp, className: "bg-indigo-100 text-indigo-700" },
+      { label: "Laravel", icon: SiLaravel, className: "bg-rose-100 text-rose-700" },
+      { label: "Django", icon: SiDjango, className: "bg-emerald-100 text-emerald-800" },
+      { label: "REST APIs", icon: FaCode, className: "bg-slate-100 text-slate-700" },
     ],
   },
   {
@@ -42,17 +45,18 @@ export const technologyGroups: TechnologyGroup[] = [
       { label: "React", icon: FaReact, className: "bg-blue-100 text-blue-700" },
       { label: "Next.js", icon: SiNextdotjs, className: "bg-slate-100 text-slate-700" },
       { label: "TypeScript", icon: SiTypescript, className: "bg-sky-100 text-sky-700" },
-      { label: "JavaScript", icon: FaJs, className: "bg-amber-100 text-amber-700" },
-      { label: "HTML", icon: FaHtml5, className: "bg-orange-100 text-orange-700" },
+      { label: "JavaScript", icon: SiJavascript, className: "bg-yellow-100 text-yellow-800" },
+      { label: "HTML/CSS", icon: SiHtml5, className: "bg-orange-100 text-orange-800" },
     ],
   },
   {
     title: "Data",
     items: [
       { label: "PostgreSQL", icon: SiPostgresql, className: "bg-blue-100 text-blue-700" },
-      { label: "MySQL", icon: SiMysql, className: "bg-sky-100 text-sky-700" },
+      { label: "SQL", icon: FaDatabase, className: "bg-slate-100 text-slate-700" },
+      { label: "pgvector", icon: FaDatabase, className: "bg-indigo-100 text-indigo-700" },
+      { label: "MySQL", icon: SiMysql, className: "bg-amber-100 text-amber-700" },
       { label: "Redis", icon: SiRedis, className: "bg-rose-100 text-rose-700" },
-      { label: "Prisma ORM", icon: SiPrisma, className: "bg-slate-100 text-slate-700" },
     ],
   },
   {
@@ -60,9 +64,20 @@ export const technologyGroups: TechnologyGroup[] = [
     items: [
       { label: "Docker", icon: FaDocker, className: "bg-blue-500 text-white" },
       { label: "Git", icon: FaGitAlt, className: "bg-slate-100 text-slate-700" },
-      { label: "Stripe API", icon: SiStripe, className: "bg-violet-100 text-violet-700" },
+      { label: "GitHub Actions", icon: SiGithubactions, className: "bg-slate-100 text-slate-700" },
+      { label: "ONNX", icon: FaMicrochip, className: "bg-violet-100 text-violet-700" },
     ],
   },
+];
+
+const knowflowBadges = [
+  { label: "Next.js", icon: SiNextdotjs, className: "bg-slate-100 text-slate-700" },
+  { label: "TypeScript", icon: SiTypescript, className: "bg-sky-100 text-sky-700" },
+  { label: "FastAPI", icon: FaPython, className: "bg-teal-100 text-teal-800" },
+  { label: "PostgreSQL", icon: SiPostgresql, className: "bg-blue-100 text-blue-700" },
+  { label: "pgvector", icon: FaDatabase, className: "bg-indigo-100 text-indigo-700" },
+  { label: "Docker", icon: FaDocker, className: "bg-blue-500 text-white" },
+  { label: "ONNX", icon: FaMicrochip, className: "bg-violet-100 text-violet-700" },
 ];
 
 const teamflowBadges = [
@@ -73,7 +88,44 @@ const teamflowBadges = [
   { label: "PostgreSQL", icon: SiPostgresql, className: "bg-blue-100 text-blue-700" },
 ];
 
-export const projectCards: Project[] = [
+export const featuredProject: Project = {
+  slug: "knowflow",
+  title: "KnowFlow",
+  category: "Business Knowledge & Document Intelligence Platform",
+  description:
+    "Full-stack platform for securely managing business documents and retrieving source-backed evidence through hybrid semantic and full-text search.",
+  image: "/images/knowflow-ask.png",
+  imageAlt:
+    "KnowFlow Ask page showing the annual leave evidence of 25 working days and page 2 source provenance",
+  badges: knowflowBadges,
+  bullets: [
+    "Tenant-aware workspaces with Owner and Member authorization",
+    "Durable PostgreSQL jobs process PDFs into page-aware searchable chunks",
+    "Hybrid PostgreSQL FTS and pgvector retrieval combined with Reciprocal Rank Fusion",
+    "Source-backed evidence with document and page provenance",
+  ],
+  architecture: [
+    { label: "Embeddings", value: "E5-small-v2 · ONNX Runtime · local CPU" },
+    { label: "Identity", value: "WorkOS AuthKit" },
+    { label: "Hosted on", value: "Render · Neon PostgreSQL and private object storage" },
+  ],
+  links: [
+    {
+      label: "Live Demo",
+      href: "https://knowflow-web.onrender.com",
+      variant: "primary",
+      icon: FaExternalLinkAlt,
+    },
+    {
+      label: "GitHub",
+      href: "https://github.com/iangonsalves/knowflow",
+      variant: "secondary",
+      icon: FaGithub,
+    },
+  ],
+};
+
+export const selectedProjects: Project[] = [
   {
     slug: "teamflow",
     title: "TeamFlow SaaS Platform",
@@ -105,13 +157,16 @@ export const projectCards: Project[] = [
       },
     ],
   },
+];
+
+export const otherProjects: Project[] = [
   {
     slug: "ecommerce",
     title: "E-Commerce Platform",
     category: "E-Commerce Application",
     description:
       "Alex's Jersey Hub Platform is a full-stack ecommerce platform built with React and a PHP REST API, backed by PostgreSQL.",
-    image: "/images/jersey_platform.png",
+    image: "/images/jersey_platform.webp",
     imageAlt: "Screenshot of E-Commerce Platform",
     badges: [
       { label: "React", icon: FaReact, className: "bg-blue-100 text-blue-700" },
@@ -136,7 +191,7 @@ export const projectCards: Project[] = [
     category: "Booking Platform",
     description:
       "Restaurant management and online booking system built with Django and MySQL.",
-    image: "/images/restaurant.png",
+    image: "/images/restaurant.webp",
     imageAlt: "Screenshot of Restaurant Booking System",
     badges: [
       { label: "Django", icon: SiDjango, className: "bg-green-100 text-green-800" },
@@ -157,8 +212,8 @@ export const projectCards: Project[] = [
 ];
 
 export const aboutPoints = [
-  "Backend and Full-Stack Developer with experience building scalable web applications and APIs.",
-  "Strong focus on API development, relational databases, and clean backend architecture.",
-  "Comfortable working across Django/Python, PHP, and modern React frontends when needed.",
-  "Hands-on with PostgreSQL, MySQL, Docker, and production-style deployments.",
+  "Backend services and API development",
+  "Relational data modeling and PostgreSQL",
+  "Full-stack product implementation",
+  "Practical AI integration with source-grounded retrieval",
 ];

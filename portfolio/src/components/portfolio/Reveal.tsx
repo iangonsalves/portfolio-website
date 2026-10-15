@@ -1,6 +1,3 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 
 type RevealProps = {
@@ -8,37 +5,8 @@ type RevealProps = {
   className?: string;
 };
 
+// Keep the original component API while rendering content immediately and
+// avoiding client-side observers for a static portfolio page.
 export default function Reveal({ children, className = "" }: RevealProps) {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const element = ref.current;
-    if (!element) {
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.18 }
-    );
-
-    observer.observe(element);
-
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      className={`reveal ${isVisible ? "reveal-visible" : ""} ${className}`}
-    >
-      {children}
-    </div>
-  );
+  return <div className={className}>{children}</div>;
 }

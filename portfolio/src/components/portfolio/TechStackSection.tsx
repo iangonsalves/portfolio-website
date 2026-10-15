@@ -9,17 +9,21 @@ type TechStackSectionProps = {
 
 export default function TechStackSection({ groups }: TechStackSectionProps) {
   return (
-    <section id="technologies" className="section-shell section-shell-tech flex flex-col gap-6">
-      <SectionHeading title="Technologies" subtitle="The tools and technologies I work with." />
+    <section id="technologies" className="content-section" aria-labelledby="technologies-heading">
+      <SectionHeading
+        id="technologies-heading"
+        title="Technologies"
+        subtitle="Tools I have used across my backend, full-stack, and data-focused projects."
+      />
       <Reveal>
-        <div className="section-surface p-4 sm:p-5">
-          <div className="flex flex-col gap-4">
+        <div className="technology-card">
+          <div className="technology-groups">
             {groups.map((group) => (
-              <div key={group.title} className="flex flex-col gap-3 sm:flex-row sm:items-center">
-                <h3 className="min-w-24 text-sm font-semibold uppercase tracking-[0.12em] text-slate-500">
+              <div key={group.title} className="technology-group">
+                <h3 className="technology-group-title">
                   {group.title}
                 </h3>
-                <div className="flex flex-wrap gap-2.5">
+                <div className="technology-badges">
                   {group.items.map((item) => (
                     <BadgePill key={`${group.title}-${item.label}`} badge={item} />
                   ))}

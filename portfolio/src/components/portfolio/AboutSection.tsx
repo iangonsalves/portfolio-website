@@ -1,5 +1,4 @@
 import { FaCircle } from "react-icons/fa";
-import Reveal from "@/components/portfolio/Reveal";
 import SectionHeading from "@/components/portfolio/SectionHeading";
 
 type AboutSectionProps = {
@@ -8,20 +7,26 @@ type AboutSectionProps = {
 
 export default function AboutSection({ points }: AboutSectionProps) {
   return (
-    <section id="about" className="section-shell section-shell-about flex flex-col gap-6">
-      <SectionHeading title="About Me" />
-      <Reveal>
-        <div className="section-surface p-6 sm:p-8">
-          <ul className="space-y-4">
-            {points.map((point) => (
-              <li key={point} className="flex items-start gap-3 text-base leading-7 text-slate-700">
-                <FaCircle className="mt-2 shrink-0 text-[8px] text-blue-500" />
-                <span>{point}</span>
-              </li>
-            ))}
-          </ul>
+    <section id="experience" className="content-section" aria-labelledby="experience-heading">
+      <SectionHeading title="About & Experience" id="experience-heading" />
+      <div className="profile-section-card">
+        <div className="profile-intro">
+          <p>
+            I have more than two years of professional backend and software development experience,
+            building reliable services and full-stack applications from API and data design through
+            to user-facing workflows. My recent work also includes practical AI integration using
+            local embeddings, hybrid retrieval, and source-grounded evidence.
+          </p>
         </div>
-      </Reveal>
+        <ul className="profile-focus-list">
+          {points.map((point) => (
+            <li key={point}>
+              <FaCircle aria-hidden="true" />
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }

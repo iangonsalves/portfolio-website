@@ -26,6 +26,8 @@ A responsive personal portfolio website showcasing my skills, projects, and prof
 
 ## Projects Featured
 
+- **KnowFlow — Business Knowledge & Document Intelligence Platform**: Full-stack app for private document management and source-backed search using FastAPI, PostgreSQL, pgvector, and local E5 embeddings.
+- **TeamFlow SaaS Platform**: Multi-tenant team collaboration app with workspace management and subscription billing.
 - **Football Jersey Online Shopping Platform** (PHP + React)
 - **Restaurant Booking System** (Django)
 

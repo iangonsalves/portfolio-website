@@ -10,14 +10,14 @@ export default function ActionButton({ link, className = "" }: ActionButtonProps
   const isExternal = Boolean(link.href?.startsWith("http"));
   const baseClassName =
     link.variant === "primary"
-      ? "inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-md"
-      : "inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white/90 px-4 py-2.5 text-sm font-semibold text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-200 hover:bg-slate-50 hover:text-blue-600";
+      ? "action-button action-button-primary"
+      : "action-button action-button-secondary";
   const resolvedClassName = `${baseClassName} ${className}`.trim();
 
   if (link.disabled || !link.href) {
     return (
       <span className={`${resolvedClassName} cursor-not-allowed opacity-60`} aria-disabled="true">
-        <Icon className="text-xs" />
+        <Icon className="text-sm" aria-hidden="true" />
         {link.label}
       </span>
     );
@@ -29,8 +29,9 @@ export default function ActionButton({ link, className = "" }: ActionButtonProps
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}
       className={resolvedClassName}
+      aria-label={link.label}
     >
-      <Icon className="text-xs" />
+      <Icon className="text-sm" aria-hidden="true" />
       {link.label}
     </a>
   );

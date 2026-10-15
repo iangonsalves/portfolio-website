@@ -1,19 +1,21 @@
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import ActionButton from "@/components/portfolio/ActionButton";
 import Reveal from "@/components/portfolio/Reveal";
+import SectionHeading from "@/components/portfolio/SectionHeading";
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="flex flex-col gap-6">
+    <section id="contact" className="content-section contact-section" aria-labelledby="contact-heading">
+      <SectionHeading title="Contact" id="contact-heading" />
       <Reveal>
-        <div className="cta-surface grid gap-6 p-6 sm:grid-cols-[1.2fr_0.8fr] sm:p-8">
+        <div className="cta-surface">
           <div className="space-y-4">
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-200">
               Let&apos;s Connect
             </p>
-            <h2 className="text-3xl font-bold text-white sm:text-4xl">
-              Open to new opportunities, collaborations, and meaningful conversations.
-            </h2>
+            <h3 className="contact-title">
+              Open to new opportunities and collaborations.
+            </h3>
             <p className="max-w-2xl text-sm leading-7 text-blue-100 sm:text-base">
               Feel free to connect through the links below to discuss opportunities, projects, or
               anything else worth exploring.
@@ -38,7 +40,7 @@ export default function ContactSection() {
         </div>
       </Reveal>
       <footer className="flex flex-col gap-2 px-1 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-        <p>&copy; 2024 Ian Gonsalves. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Ian Gonsalves.</p>
       </footer>
     </section>
   );

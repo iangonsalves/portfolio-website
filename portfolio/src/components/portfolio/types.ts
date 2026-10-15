@@ -24,6 +24,7 @@ export type Project = {
   imageAlt: string;
   badges: Badge[];
   bullets: string[];
+  architecture?: { label: string; value: string }[];
   links: ProjectLink[];
 };
 

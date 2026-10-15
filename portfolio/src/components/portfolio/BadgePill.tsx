@@ -9,9 +9,9 @@ export default function BadgePill({ badge }: BadgePillProps) {
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold shadow-sm ${badge.className}`}
+      className={`technology-pill inline-flex items-center gap-2 rounded-full font-semibold ${badge.className}`}
     >
-      <Icon className="shrink-0" />
+      <Icon className="shrink-0" aria-hidden="true" />
       {badge.label}
     </span>
   );

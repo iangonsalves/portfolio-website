@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import PortfolioNavigation from "@/components/portfolio/PortfolioNavigation";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Portfolio of all projects",
+  title: "Ian Gonsalves | Software Engineer — Backend & Full-Stack",
+  description:
+    "Portfolio of Ian Gonsalves, a software engineer focused on backend systems, full-stack applications, APIs, data-intensive software, and practical AI integration.",
 };
 
 export default function RootLayout({
@@ -29,19 +31,8 @@ export default function RootLayout({
         
         <link rel="icon" href={`${prefix}/favicon.ico`} />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {/* Navbar */}
-        <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200 shadow-sm py-3 px-6 flex justify-between items-center">
-          <span className="font-bold text-lg tracking-tight text-blue-700">My Portfolio</span>
-          <ul className="flex gap-6 text-base font-medium">
-            <li><a href="#technologies" className="text-gray-800 hover:text-blue-600 transition-colors">Technologies</a></li>
-            <li><a href="#projects" className="text-gray-800 hover:text-blue-600 transition-colors">Projects</a></li>
-            <li><a href="#about" className="text-gray-800 hover:text-blue-600 transition-colors">About</a></li>
-            <li><a href="#contact" className="text-gray-800 hover:text-blue-600 transition-colors">Contact</a></li>
-          </ul>
-        </nav>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <PortfolioNavigation />
         {children}
       </body>
     </html>
