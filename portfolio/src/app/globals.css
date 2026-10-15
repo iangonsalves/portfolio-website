@@ -327,16 +327,16 @@ h4 {
 }
 
 .featured-project-image-trigger {
+  align-self: stretch;
+  height: 100%;
   min-height: 22rem;
-  aspect-ratio: 1.55;
+  aspect-ratio: auto;
 }
 
 .featured-project-image {
   object-fit: cover;
-  object-position: 55% 43%;
-  transform: scale(1.35);
-  transform-origin: center;
-  transition: filter 220ms ease, transform 220ms ease;
+  object-position: 60% 48%;
+  transition: filter 220ms ease;
 }
 
 .project-image-trigger:hover .project-card-image,
@@ -889,6 +889,7 @@ h4 {
   }
 
   .featured-project-image-trigger {
+    height: auto;
     min-height: unset;
     aspect-ratio: 1.85;
   }
@@ -1009,6 +1010,7 @@ h4 {
   }
 
   .featured-project-image-trigger {
+    height: auto;
     aspect-ratio: 1.45;
     border-radius: 0.9rem;
   }
