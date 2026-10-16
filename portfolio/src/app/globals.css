@@ -327,15 +327,14 @@ h4 {
 }
 
 .featured-project-image-trigger {
-  align-self: stretch;
-  height: 100%;
+  align-self: center;
   min-height: 22rem;
-  aspect-ratio: auto;
+  aspect-ratio: 0.94;
 }
 
 .featured-project-image {
   object-fit: cover;
-  object-position: 60% 48%;
+  object-position: 55% 48%;
   transition: filter 220ms ease;
 }
 
