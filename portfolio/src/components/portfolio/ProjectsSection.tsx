@@ -22,7 +22,7 @@ export default function ProjectsSection({
     <section id="projects" className="projects-section" aria-labelledby="projects-heading">
       <SectionHeading
         title="Selected Projects"
-        subtitle="A closer look at systems I have designed and built, from document intelligence to team collaboration."
+        subtitle="Full-stack products spanning document intelligence, team collaboration, e-commerce, and booking systems."
         id="projects-heading"
       />
 
